@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "INSPIRON TECH | Institutional Brand Manual",
-    description: "Operational guidelines and high-precision brand engineering for MD ABU HASAN.",
+    title: "INSPIRON TECH | Official Manager.io Partner Bangladesh",
+    description: "Institutional Cloud Accounting & Business Automation for 100+ Crore Agro-Enterprises.",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function MainLayout({
