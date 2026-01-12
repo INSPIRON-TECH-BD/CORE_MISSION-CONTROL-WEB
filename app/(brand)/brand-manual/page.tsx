@@ -8,6 +8,7 @@ import React from 'react';
 import { ShieldCheck, Zap, BarChart3, Copy, Download, ExternalLink, MousePointer2 } from 'lucide-react';
 import { InspironLogo } from '@/components/Branding/Logo';
 import { GeometryInspector } from '@/components/Branding/GeometryInspector';
+import Link from 'next/link';
 
 const BRAND_COLORS = [
     { name: 'Oxford Navy', hex: '#002147', usage: 'Foundation & Trust', text: 'text-white' },
@@ -29,9 +30,14 @@ export default function BrandManualPage() {
                 <p className="text-xl text-gray-400 border-l-4 border-aqua pl-8 italic mb-12 max-w-2xl leading-relaxed">
                     "Stabilizing financial gravity for high-scale aquaculture and industrial operations via custom logic migration."
                 </p>
-                <div className="p-8 bg-[#002147]/20 border border-aqua/10 rounded-2xl">
-                    <h4 className="text-aqua font-bold uppercase text-[10px] tracking-widest mb-4">Primary Strategic Objective</h4>
-                    <p className="text-base text-gray-300">Achieve <span className="text-white font-bold">0.1% error tolerance</span> across 10,000+ monthly transactions for clients with BDT 100 Crore+ turnover. Every byte of data must be recoverable and auditable.</p>
+                <div className="p-8 bg-[#002147]/20 border border-aqua/10 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <h4 className="text-aqua font-bold uppercase text-[10px] tracking-widest mb-4">Primary Strategic Objective</h4>
+                        <p className="text-base text-gray-300">Achieve <span className="text-white font-bold">0.1% error tolerance</span> across 10,000+ monthly transactions for clients with BDT 100 Crore+ turnover. Every byte of data must be recoverable and auditable.</p>
+                    </div>
+                    <Link href="https://inspiron.tech/case-study/agro" target="_blank" className="shrink-0 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-aqua hover:text-navy transition-all flex items-center gap-2">
+                        View Evidence <ExternalLink size={12} />
+                    </Link>
                 </div>
             </section>
 

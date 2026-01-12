@@ -2,6 +2,7 @@ import React from 'react';
 import { InspironLogo } from '@/components/Branding/Logo';
 import { RevenueDashboard } from '@/components/ui/RevenueDashboard';
 import { ArrowUpRight, Shield, Zap, Database } from 'lucide-react';
+import Link from 'next/link';
 
 /**
  * INSPIRON TECH - PUBLIC LANDING v1.0
@@ -17,7 +18,7 @@ export default function LandingPage() {
                 <div className="w-40"><InspironLogo /></div>
                 <div className="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                     <a href="#services" className="hover:text-aqua transition-colors">Services</a>
-                    <a href="#case-studies" className="hover:text-aqua transition-colors">Case Studies</a>
+                    <Link href="/case-study/agro" className="hover:text-aqua transition-colors">Case Studies</Link>
                     <a href="#consultation" className="text-aqua">Book Consultation</a>
                 </div>
             </nav>
