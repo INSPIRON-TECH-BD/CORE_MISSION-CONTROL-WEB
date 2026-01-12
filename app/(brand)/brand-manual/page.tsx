@@ -7,6 +7,7 @@
 import React from 'react';
 import { ShieldCheck, Zap, BarChart3, Copy, Download, ExternalLink, MousePointer2 } from 'lucide-react';
 import { InspironLogo } from '@/components/Branding/Logo';
+import { GeometryInspector } from '@/components/Branding/GeometryInspector';
 
 const BRAND_COLORS = [
     { name: 'Oxford Navy', hex: '#002147', usage: 'Foundation & Trust', text: 'text-white' },
@@ -96,14 +97,20 @@ export default function BrandManualPage() {
             {/* 4. LOGO GEOMETRY */}
             <section id="geometry">
                 <div className="flex items-center justify-between border-b border-[#30363d] pb-4 mb-10">
-                    <h2 className="text-2xl font-black uppercase tracking-widest">Logo Geometry</h2>
+                    <h2 className="text-2xl font-black uppercase tracking-widest text-white">Logo Geometry</h2>
                     <span className="text-[10px] font-mono text-gray-500">MATH_DRIVEN_IDENTITY</span>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
-                    <div className="space-y-8 text-gray-400">
-                        <p className="leading-relaxed">The INSPIRON identity is a mathematical construct generated from path data extracted from v12.1 assets. It utilizes an <span className="text-white font-bold">8px sub-grid</span> for total alignment.</p>
+                <p className="text-gray-400 mb-8 leading-relaxed">
+                    The INSPIRON TECH icon is engineered for extreme legibility at scales as low as 16px.
+                    The identity is a mathematical construct generated from precise path data. It utilizes an
+                    <span className="text-white font-bold"> 8px sub-grid</span> for total scaling alignment.
+                </p>
 
+                <GeometryInspector />
+
+                <div className="grid lg:grid-cols-2 gap-16 items-start mt-12">
+                    <div className="space-y-8 text-gray-400">
                         <div className="space-y-6">
                             <div className="flex gap-4">
                                 <div className="h-2 w-2 rounded-full bg-aqua mt-2 shrink-0"></div>
@@ -119,6 +126,10 @@ export default function BrandManualPage() {
                                     <p className="text-xs">The geometric center of gravity. Represents the precision-point where automation meets financial recovery.</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded text-[10px] text-yellow-200 uppercase font-bold tracking-widest">
+                            Warning: Never modify vector coordinates manually. All exports must
+                            originate from the v12.1 Master Factory to maintain 0.1% tolerance.
                         </div>
                     </div>
                     <div className="bg-[#0b0e14] p-16 rounded-[32px] border border-[#30363d] shadow-2xl group flex items-center justify-center">
