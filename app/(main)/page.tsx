@@ -15,7 +15,7 @@ export default function LandingPage() {
         <div className="min-h-screen bg-[#010409] text-white selection:bg-aqua selection:text-navy">
 
             {/* NAVIGATION */}
-            <nav className="border-b border-white/5 py-6 px-8 flex justify-between items-center bg-black/50 backdrop-blur-xl sticky top-0 z-50">
+            <nav className="border-b border-white/5 py-6 px-8 flex justify-between items-center bg-[#002147]/90 backdrop-blur-xl sticky top-0 z-50">
                 <div className="w-40"><InspironLogo /></div>
                 <div className="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                     <Link href="/services" className="hover:text-aqua transition-colors">Services</Link>
