@@ -31,96 +31,69 @@ export async function GET(req: NextRequest) {
  * WhatsApp Message Handler (POST)
  * Processes incoming leads and applies "n-Law" filtering.
  */
+/**
+ * WhatsApp Message Handler (POST)
+ * Processes incoming leads and applies "Whale" detection.
+ */
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
+        const payload = await req.json();
 
-        // Verification that this is a WhatsApp message
-        if (body.object === 'whatsapp_business_account') {
-            const entry = body.entry?.[0];
-            const changes = entry?.changes?.[0];
-            const value = changes?.value;
-            const message = value?.messages?.[0];
-            const contact = value?.contacts?.[0];
+        // 1. Precise Extraction based on your JSON structure
+        const value = payload.entry?.[0]?.changes?.[0]?.value;
+        const message = value?.messages?.[0];
+        const contact = value?.contacts?.[0];
 
-            if (message && contact) {
-                const leadText = message.text?.body?.toLowerCase() || '';
-                const wa_id = contact.wa_id;
-                const name = contact.profile?.name || 'Unknown Operator';
+        if (message && contact) {
+            const leadPhone = contact.wa_id; // e.g., "16315551181"
+            const leadName = contact.profile.name; // e.g., "test user name"
+            const leadText = message.text.body; // e.g., "this is a text message"
 
-                console.log(`INCOMING_LEAD: ${name} (${wa_id}) | Payload: ${leadText}`);
+            console.log(`[INSPIRON SENTRY] Data received from ${leadName} (${leadPhone})`);
 
-                // LEAD QUALIFICATION LOGIC (The "n-Law" Filter)
-                let tier = 'TIER_3_MICRO';
+            // 2. Whale Detection Logic (BDT 100 Crore Target)
+            const isWhale = leadText.toLowerCase().includes("audit") ||
+                leadText.toLowerCase().includes("crore");
 
-                // Qualification Criteria: 50Cr+ turnover or scale indicators
-                const whaleKeywords = ['above 50cr', '50cr', '20+ ponds', '100cr', 'industrial scale'];
-                const smeKeywords = ['10-50cr', '5-10 ponds', 'automated tracking'];
-
-                if (whaleKeywords.some(keyword => leadText.includes(keyword))) {
-                    tier = 'TIER_1_WHALE';
-                } else if (smeKeywords.some(keyword => leadText.includes(keyword))) {
-                    tier = 'TIER_2_SME';
-                }
-
-                await processLead({ name, wa_id, text: leadText }, tier);
+            if (isWhale) {
+                // TRIGGER: Institutional Handshake
+                await sendTemplateResponse(leadPhone, leadName);
             }
-
-            return NextResponse.json({ status: 'success' });
-        } else {
-            return NextResponse.json({ status: 'not_found' }, { status: 404 });
         }
+
+        return new NextResponse("EVENT_RECEIVED", { status: 200 });
     } catch (error) {
-        console.error('WEBHOOK_ERROR:', error);
-        return NextResponse.json({ status: 'error' }, { status: 500 });
+        return new NextResponse("INTERNAL_ERROR", { status: 500 });
     }
 }
 
-/**
- * Process Lead based on Tier
- * High-priority triggers for TIER_1_WHALE
- */
-async function processLead(lead: { name: string, wa_id: string, text: string }, tier: string) {
-    const timestamp = new Date().toISOString();
-    const PHONE_ID = '917810161405498';
-    const url = `https://graph.facebook.com/v21.0/${PHONE_ID}/messages`;
+async function sendTemplateResponse(to: string, name: string) {
+    // Use env var or fallback to the known ID for reliability if env is missing during dev
+    const phoneId = process.env.PHONE_NUMBER_ID || '917810161405498';
+    const url = `https://graph.facebook.com/v21.0/${phoneId}/messages`;
 
-    if (tier === 'TIER_1_WHALE') {
-        console.log(`[${timestamp}] CRITICAL_WHALE_DETECTED: ${lead.name} (${lead.wa_id})`);
-    } else if (tier === 'TIER_2_SME') {
-        console.log(`[${timestamp}] SME_LEAD_LOGGED: ${lead.name} (${lead.wa_id})`);
-    } else {
-        console.log(`[${timestamp}] MICRO_LEAD_LOGGED: ${lead.name} (${lead.wa_id})`);
-    }
-
-    // Only trigger the welcome template for NEW leads
-    if (lead.text === 'start' || lead.text === 'technical audit') {
-        const payload = {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${process.env.WHATSAPP_TOKEN}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
             messaging_product: "whatsapp",
-            to: lead.wa_id,
+            to: to,
             type: "template",
             template: {
                 name: "welcome_message_english",
                 language: { code: "en" },
                 components: [{
                     type: "body",
-                    parameters: [{ type: "text", text: lead.name }]
+                    parameters: [{ type: "text", text: name }]
                 }]
             }
-        };
+        }),
+    });
 
-        try {
-            await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.WHATSAPP_TOKEN}`
-                },
-                body: JSON.stringify(payload)
-            });
-            console.log(`TEMPLATE_SENT: welcome_message_english to ${lead.wa_id}`);
-        } catch (error) {
-            console.error('TEMPLATE_ERROR:', error);
-        }
-    }
+    const data = await response.json();
+    console.log(`[HANDSHAKE_STATUS] Sent to ${to}:`, data);
+    return data;
 }
