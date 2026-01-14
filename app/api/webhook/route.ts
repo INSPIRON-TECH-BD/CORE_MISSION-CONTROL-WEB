@@ -89,7 +89,14 @@ async function sendTemplateResponse(to: string, name: string) {
                 language: { code: "en" },
                 components: [{
                     type: "body",
-                    parameters: [{ type: "text", text: name }]
+                    parameters: [
+                        {
+                            type: "text",
+                            // IN THE NEW META EDITOR, THE FIRST VARIABLE IS USUALLY "1"
+                            parameter_name: "1",
+                            text: name
+                        }
+                    ]
                 }]
             }
         }),
