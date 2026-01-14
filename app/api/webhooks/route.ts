@@ -30,7 +30,8 @@ export async function POST(request: NextRequest) {
         const body = await request.json();
         console.log('Incoming webhook:', JSON.stringify(body, null, 2));
 
-        const value = body.entry?.[0]?.changes?.[0]?.value;
+        // 1. Extraction Node - Supports Production Entry array and Dashboard "Test" partials
+        const value = body.entry?.[0]?.changes?.[0]?.value || body.value;
         const message = value?.messages?.[0];
         const contact = value?.contacts?.[0];
 

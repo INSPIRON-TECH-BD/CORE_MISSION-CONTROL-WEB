@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
     try {
         const payload = await req.json();
 
-        // 1. Precise Extraction based on your JSON structure
-        const value = payload.entry?.[0]?.changes?.[0]?.value;
+        // 1. Precise Extraction - Handles both Production structure and Dashboard "Test" structure
+        const value = payload.entry?.[0]?.changes?.[0]?.value || payload.value;
         const message = value?.messages?.[0];
         const contact = value?.contacts?.[0];
 
