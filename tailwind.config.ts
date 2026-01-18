@@ -12,8 +12,8 @@ const config: Config = {
     extend: {
       colors: {
         navy: "#002147",
-        gold: "#fc0",
-        aqua: "#00ffff",
+        gold: "#FFD700",
+        aqua: "#00D2FF",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -21,7 +21,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       dropShadow: {
-        '3xl': '0 35px 35px rgba(0, 255, 255, 0.25)',
+        '3xl': '0 35px 35px rgba(0, 210, 255, 0.25)',
       }
     },
   },
