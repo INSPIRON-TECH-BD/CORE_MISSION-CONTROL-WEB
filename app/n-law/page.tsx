@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { InspironLogo } from '@/components/Branding/Logo';
+import GeometryInspector from '@/components/Branding/GeometryInspector';
 
 export default function NLawStandards() {
     return (
@@ -23,7 +24,7 @@ export default function NLawStandards() {
                     </Link>
                     <span className="h-4 w-px bg-white/10"></span>
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-aqua animate-pulse">
-                        Operational Code v2.0
+                        Sentry Protocol v2.5
                     </span>
                 </div>
                 <div className="hidden md:flex items-center gap-4 text-[10px] font-mono text-gray-600">
@@ -34,8 +35,8 @@ export default function NLawStandards() {
             </header>
 
             {/* 2. EXECUTIVE HERO (Matched to Precision Audit) */}
-            <section className="relative pt-32 pb-32 px-10 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,_rgba(0,255,255,0.05)_0%,_transparent_50%)]"></div>
+            <section className="relative pt-32 pb-20 px-10 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,_rgba(0,210,255,0.05)_0%,_transparent_50%)]"></div>
                 <div className="max-w-5xl mx-auto relative z-10">
                     <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-12">
                         <Scale size={14} className="text-aqua" />
@@ -51,6 +52,13 @@ export default function NLawStandards() {
                             "Software must not be bought. It must be engineered. Every line of logic in MISSION CONTROL must serve a specific operational ROI metric."
                         </p>
                     </div>
+                </div>
+            </section>
+
+            {/* 2.5 GEOMETRIC SENTRY (LIVE AUDIT) */}
+            <section className="px-10 pb-32">
+                <div className="max-w-4xl mx-auto">
+                    <GeometryInspector />
                 </div>
             </section>
 
