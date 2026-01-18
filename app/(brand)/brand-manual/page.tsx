@@ -9,7 +9,7 @@
 import React from 'react';
 import { ShieldCheck, Zap, BarChart3, Copy, Download, ExternalLink, MousePointer2 } from 'lucide-react';
 import { InspironLogo } from '@/components/Branding/Logo';
-import { GeometryInspector } from '@/components/Branding/GeometryInspector';
+import GeometryInspector from '@/components/Branding/GeometryInspector';
 import Link from 'next/link';
 
 const BRAND_COLORS = [
