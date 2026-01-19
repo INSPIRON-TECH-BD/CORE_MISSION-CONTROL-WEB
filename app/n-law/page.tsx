@@ -51,8 +51,67 @@ export default function NLawStandards() {
 
             {/* 2.5 GEOMETRIC SENTRY (LIVE AUDIT) */}
             <section className="px-10 pb-32">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto space-y-20">
                     <GeometryInspector />
+
+                    {/* 3.0 RESPONSIVE HEADER LAB (USER REQUEST) */}
+                    <div className="border border-white/10 rounded-[32px] bg-[#001226]/50 p-12 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-30">
+                            <span className="text-[9px] font-black uppercase tracking-widest text-white">Lab Node 3.0</span>
+                        </div>
+
+                        <h3 className="text-2xl font-black text-white uppercase tracking-widest mb-10">Responsive Header Logic</h3>
+
+                        <div className="grid md:grid-cols-2 gap-12">
+                            {/* MOBILE SIMULATION */}
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-aqua text-xs font-bold uppercase">Mobile Viewport</span>
+                                    <span className="text-gray-500 text-[10px] uppercase tracking-widest">(Icon Dominance)</span>
+                                </div>
+                                <div className="w-[375px] h-[60px] bg-black border border-white/10 rounded-xl flex items-center px-6 relative mx-auto md:mx-0">
+                                    {/* MOCK HEADER */}
+                                    <div className="w-full flex justify-between items-center opacity-80">
+                                        <div className="w-6 h-6 bg-white/10 rounded-md"></div> {/* Menu */}
+                                        <div className="absolute left-1/2 -translate-x-1/2">
+                                            <InspironLogo size="120px" className="md:hidden" /> {/* Current Mobile Hack */}
+                                            {/* MY VERSION: ICON ONLY */}
+                                            <div className="p-2 bg-aqua/10 rounded-full border border-aqua/30">
+                                                <InspironLogo size="0" className="hidden" /> {/* Hide old */}
+                                                <img src="/icon.svg" className="w-8 h-8" alt="Mobile Logic" />
+                                            </div>
+                                        </div>
+                                        <div className="w-6 h-6 bg-white/10 rounded-full"></div> {/* Profile */}
+                                    </div>
+                                    <div className="absolute -right-4 top-1/2 -translate-y-1/2 text-aqua text-[10px] font-bold rotate-90 origin-bottom">OPTIMIZED</div>
+                                </div>
+                                <p className="text-[10px] text-gray-400 leading-relaxed uppercase tracking-wider">
+                                    Logic: On restricted widths, the "Wordmark" is jettisoned. The "Ribbon Node" anchors the center axis.
+                                </p>
+                            </div>
+
+                            {/* DESKTOP SIMULATION */}
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-gold text-xs font-bold uppercase">Desktop Viewport</span>
+                                    <span className="text-gray-500 text-[10px] uppercase tracking-widest">(Full Authority)</span>
+                                </div>
+                                <div className="w-full h-[60px] bg-black border border-white/10 rounded-xl flex items-center px-8 relative">
+                                    <div className="flex items-center gap-12 w-full">
+                                        <InspironLogo size="200px" />
+                                        <div className="flex-1 flex gap-4 justify-end opacity-30">
+                                            <div className="w-20 h-2 bg-white/20 rounded-full"></div>
+                                            <div className="w-20 h-2 bg-white/20 rounded-full"></div>
+                                            <div className="w-20 h-2 bg-white/20 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="text-[10px] text-gray-400 leading-relaxed uppercase tracking-wider">
+                                    Logic: Full "Cyan Protocol" lockup is deployed. 20% Gap is maintained.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
