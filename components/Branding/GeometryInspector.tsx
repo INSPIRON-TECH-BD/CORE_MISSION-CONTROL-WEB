@@ -41,7 +41,7 @@ export default function GeometryInspector() {
             <div className="relative flex items-center justify-center py-20 bg-[#002147]/30 rounded-[30px] border border-white/5">
 
                 {/* LOGO ASSEMBLY */}
-                <div className="flex items-end gap-[8px] relative"> {/* 8px Monolithic Gap */}
+                <div className="flex items-center gap-[8px] relative"> {/* 8px Monolithic Gap */}
 
                     {/* THE ICON */}
                     <div className="relative w-32 h-32 flex items-center justify-center">
@@ -65,7 +65,7 @@ export default function GeometryInspector() {
                     </div>
 
                     {/* THE WORDMARK (V2026: Hybrid Weight) */}
-                    <div className="flex items-baseline leading-none tracking-tight gap-1">
+                    <div className="flex items-baseline leading-none tracking-tight gap-1 pt-[6px]">
                         <span className="font-medium text-[26px] lowercase text-white">inspiron</span>
                         <span className="font-light text-[24px] uppercase text-[#FFD700]">TECH</span>
 
