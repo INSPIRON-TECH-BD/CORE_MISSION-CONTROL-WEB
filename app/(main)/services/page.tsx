@@ -12,7 +12,7 @@ import {
     MessageSquareCode, ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
-import { InspironLogo } from '@/components/Branding/Logo';
+import { RefinedLogo } from "@brand/components/Branding/RefinedLogo";
 import { LeakageSentry } from '@/components/Sentry/LeakageSentry';
 
 const SERVICE_TIERS = [
@@ -83,7 +83,7 @@ export default function ServicesPage() {
                     </Link>
                     <span className="h-8 w-px bg-white/10"></span>
                     {/* Standardized to V2026.02 Baseline */}
-                    <InspironLogo />
+                    <RefinedLogo size={40} />
                 </div>
                 <div className="hidden md:flex gap-12 text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">
                     <a href="#operations" className="hover:text-aqua transition-all text-white">Operations</a>
