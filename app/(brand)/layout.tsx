@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { InspironLogo } from '@/components/Branding/Logo';
+import { RefinedLogo } from "@brand/components/Branding/RefinedLogo";
 import { BookOpen, Shield, Palette, FileCode, Workflow } from 'lucide-react';
 
 const DOCS_NAV = [
@@ -34,7 +34,7 @@ export default function BrandLayout({ children }: { children: React.ReactNode })
             {/* 1. THE COMMAND SIDEBAR */}
             <aside className="w-72 border-r border-[#30363d] fixed h-screen bg-[#0d1117] overflow-y-auto hidden lg:block">
                 <div className="p-6 border-b border-[#30363d]">
-                    <InspironLogo className="w-32 mb-2" />
+                    <RefinedLogo size={128} className="mb-2" />
                     <p className="text-[10px] text-aqua font-mono uppercase tracking-widest">Brand System v1.0</p>
                 </div>
 

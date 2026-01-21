@@ -9,7 +9,7 @@ import {
     Hexagon, Code2, ShieldAlert, CheckCircle2, Factory
 } from 'lucide-react';
 import Link from 'next/link';
-import { InspironLogo } from '@/components/Branding/Logo';
+import { RefinedLogo } from "@brand/components/Branding/RefinedLogo";
 import GeometryInspector from '@/components/Branding/GeometryInspector';
 
 export default function NLawStandards() {
@@ -24,7 +24,7 @@ export default function NLawStandards() {
                         ← RETURN TO BASE
                     </Link>
                     <span className="h-8 w-px bg-white/10"></span>
-                    <InspironLogo />
+                    <RefinedLogo size={40} />
                 </div>
             </header>
 
@@ -74,10 +74,10 @@ export default function NLawStandards() {
                                     <div className="w-full flex justify-between items-center opacity-80">
                                         <div className="w-6 h-6 bg-white/10 rounded-md"></div> {/* Menu */}
                                         <div className="absolute left-1/2 -translate-x-1/2">
-                                            <InspironLogo size="120px" className="md:hidden" /> {/* Current Mobile Hack */}
+                                            <RefinedLogo size={120} className="md:hidden" /> {/* Current Mobile Hack */}
                                             {/* MY VERSION: ICON ONLY */}
                                             <div className="p-2 bg-aqua/10 rounded-full border border-aqua/30">
-                                                <InspironLogo size="0" className="hidden" /> {/* Hide old */}
+                                                <RefinedLogo size={0} className="hidden" /> {/* Hide old */}
                                                 <img src="/icon.svg" className="w-8 h-8" alt="Mobile Logic" />
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@ export default function NLawStandards() {
                                 </div>
                                 <div className="w-full h-[60px] bg-black border border-white/10 rounded-xl flex items-center px-8 relative">
                                     <div className="flex items-center gap-12 w-full">
-                                        <InspironLogo size={48} /> {/* Standard Fit for 60px Header */}
+                                        <RefinedLogo size={48} /> {/* Standard Fit for 60px Header */}
                                         <div className="flex-1 flex gap-4 justify-end opacity-30">
                                             <div className="w-20 h-2 bg-white/20 rounded-full"></div>
                                             <div className="w-20 h-2 bg-white/20 rounded-full"></div>
