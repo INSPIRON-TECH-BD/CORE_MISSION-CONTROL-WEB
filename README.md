@@ -1,8 +1,8 @@
-🚀 INSPIRON TECH: Mission Control (v1.0)
+🚀 INSPIRON TECH: CORE_MISSION-CONTROL-WEB (v2.0)
 **The Public Command Center for High-Precision Business Engineering**
 
 ## 🌐 Overview
-`op-mission-control` is the public-facing headquarters for **INSPIRON TECH**, a Bangladesh-based automation studio led by **MD ABU HASAN**. This repository serves as the primary "Proof of Work" for our custom-engineered financial and operational frameworks.
+`core-mission-control-web` is the public-facing headquarters for **INSPIRON TECH**, a Bangladesh-based automation studio led by **MD ABU HASAN**. This repository serves as the primary "Proof of Work" for our custom-engineered financial and operational frameworks.
 
 > **Mission Objective:** Achieving a 0.1% error rate in enterprise data environments while maximizing recoverable capital.
 

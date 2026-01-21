@@ -25,6 +25,9 @@
         "paths": {
             "@/*": [
                 "./*"
+            ],
+            "@brand/*": [
+                "./src/brand-system/*"
             ]
         }
     },
