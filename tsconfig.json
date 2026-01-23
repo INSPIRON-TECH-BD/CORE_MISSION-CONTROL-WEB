@@ -27,7 +27,7 @@
         "./*"
       ],
       "@brand/*": [
-        "../../01_CyberHasan/CORE_BRAND-SYSTEM/*"
+        "./src/brand-system/*"
       ]
     }
   },
